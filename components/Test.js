@@ -1,7 +1,7 @@
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 
 function test() {
-  const { systemTheme, theme, setTheme } = useTheme();
+  // const { systemTheme, theme, setTheme } = useTheme();
   return <div>test</div>;
 }
 
