@@ -3,15 +3,15 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: "class",
+  // darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        Walsheim: ["Walsheim", "sans-serif"],
+      },
       gridTemplateColumns: {
         highlights: "minmax(150px, 25%) 1fr",
         fullRow: "minmax(250px, 25%) 1fr",
-      },
-      fontFamily: {
-        Walsheim: ["Walsheim", "sans-serif"],
       },
     },
   },

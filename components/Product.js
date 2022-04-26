@@ -7,21 +7,23 @@ import { HeartIcon, StarIcon } from "@heroicons/react/solid";
 function Product({ id, title, price, description, category, image, rating }) {
   // const [isSale] = useState(Math.random() < 0.5);
   return (
-    <div className="relative flex flex-col z-30 p-4 justify-around my-2 md:my-5 h-[350px] md:h-[400px]">
-      <p className="absolute top-2 right-2 z-10">
-        <HeartIcon className="h-6 text-yellow-500 hover:text-yellow-200" />
+    <div className="relative flex flex-col z-30 p-4 justify-around my-2 h-[350px] md:h-[400px] border rounded-lg md:w-[230px] lg:w-[250px]">
+      <p className="absolute top-2 right-2 z-10 cursor-pointer">
+        <HeartIcon className="h-6 fill-transparent stroke-black hover:fill-[#ff385c] focus:fill-black " />
       </p>
       <Image src={image} height={150} width={150} objectFit="contain" />
 
       <div className="my-2">
         <h2 className="line-clamp-2">{title}</h2>
         <p className="text-xs my-2 line-clamp-2">{description}</p>
-        <div className="inline-flex gap-4">
+        <div className="flex justify-around">
           <Currency quantity={price * 51.28} currency="PHP" />
-          <p className="inline-flex">
-            <StarIcon className="h-5 text-[#ff385c]" />
+          <p className="inline-flex items-center">
+            <StarIcon className="h-5 text-[#ff385c] text-sm md:text-base" />
             {rating.rate}
-            <span className="text-gray-400">({rating.count})</span>
+            <span className="text-gray-400 text-sm md:text-base">
+              ({rating.count})
+            </span>
           </p>
         </div>
 
@@ -30,7 +32,7 @@ function Product({ id, title, price, description, category, image, rating }) {
       </div> */}
       </div>
 
-      <button className="button">Add to cart</button>
+      <button className="hover-motion">Add to cart</button>
     </div>
   );
 }

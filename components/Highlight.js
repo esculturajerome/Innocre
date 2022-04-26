@@ -7,8 +7,8 @@ function Highlight({ id, title, price, description, category, image, rating }) {
   return (
     <>
       <button className="grid grid-cols-highlights 1fr] gap-2 border rounded-lg relative p-1 md:p-3 items-center text-left w-full">
-        <p className="absolute top-2 right-2 z-10">
-          <HeartIcon className="h-6 fill-transparent stroke-black hover:fill-[#ff385c] focus:fill-black" />
+        <p className="absolute top-2 right-2 z-10 cursor-pointer">
+          <HeartIcon className="h-6 fill-transparent stroke-black hover:fill-[#ff385c] focus:fill-black " />
         </p>
         <div className="bg-white">
           <Image src={image} height={150} width={150} objectFit="contain" />
