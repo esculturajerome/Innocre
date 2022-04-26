@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function Card({ category, subText, url, imageLink }) {
   return (
-    <div className="relative w-[400px] sm:w-[450px] md:w-[500px] lg:w-[600px]">
+    <div className="relative w-[350px] sm:w-[400px] md:w-[500px] lg:w-[600px]">
       <Image
         src={imageLink}
         objectFit="cover"

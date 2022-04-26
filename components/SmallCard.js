@@ -3,15 +3,15 @@ function SmallCard({ category, Icon }) {
     <>
       <div
         key={category}
-        className="flex items-center  mt-2 space-x-2 rounded-full cursor-pointer hover:bg-gray-100 hover-motion p-2 border"
+        className="flex items-center  mt-2 space-x-2 rounded-full cursor-pointer hover:bg-gray-100 p-2 focus:bg-gray-100"
       >
         {/* Left */}
         <div className="relative h-8 w-8">
-          <Icon className="text-[#222222]" />
+          <Icon className="text-mainTextColor" />
         </div>
         {/* Right */}
         <div>
-          <h2>{category}</h2>
+          <h2 className="text-mainTextColor">{category}</h2>
         </div>
       </div>
     </>

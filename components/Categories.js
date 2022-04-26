@@ -31,7 +31,7 @@ function Categories() {
   ];
   return (
     <div className="overflow-y-hidden overflow-x-scroll scroll-hidden">
-      <div className="inline-flex space-x-6 ml-1">
+      <div className="inline-flex space-x-2 md:space-x-4 ml-1">
         {categories.map((category) => (
           <SmallCard
             key={category.id}

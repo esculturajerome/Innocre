@@ -12,7 +12,7 @@ import { server } from "../config";
 
 export default function Home({ products }) {
   return (
-    <div className="font-Walsheim">
+    <div className="font-Karla">
       <Head>
         <title>Innocre Online Shop</title>
         <meta name="description" content="Innocre Online Shop" />
@@ -21,8 +21,11 @@ export default function Home({ products }) {
       <Header />
       <main>
         <Banner />
-        <section className="w-[90%] mx-auto my-6 md:my-2">
+        <section className="w-[90%] mx-auto mt-2">
           <Categories />
+        </section>
+
+        <section className="my-6 md:my-2">
           <ProductFeed products={products} />
         </section>
         {/* <FullRow /> */}
