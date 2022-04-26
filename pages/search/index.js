@@ -10,34 +10,34 @@ import ProductFeed from "../../components/ProductFeed";
 
 export default function index({ products }) {
   const router = useRouter();
-  const [query, setQuery] = useState("");
+  const [keyword, setKeyword] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    setQuery(router.query.keyword);
+    setKeyword(router.query.keyword);
   }, [router]);
   useEffect(() => {
     const filteredData = products.filter(
       (item) =>
-        item.title.toLowerCase().includes(query.toLowerCase()) ||
-        item.description.toLowerCase().includes(query.toLowerCase()) ||
-        item.category.toLowerCase().includes(query.toLowerCase())
+        item.title.toLowerCase().includes(keyword.toLowerCase()) ||
+        item.description.toLowerCase().includes(keyword.toLowerCase()) ||
+        item.category.toLowerCase().includes(keyword.toLowerCase())
     );
     setFilteredData(filteredData);
-  }, [query]);
+  }, [keyword]);
 
   return (
     <div>
       <Head>
-        <title>Result for {query} | Innocre</title>
-        <meta name="description" content={`Search result for ${query}`} />
+        <title>Result for {keyword} | Innocre</title>
+        <meta name="description" content={`Search result for ${keyword}`} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main>
         <Banner imageLink={"banner-2.webp"} />
         <section className="my-6 md:my-2">
-          <ProductFeed products={filteredData} query={query} />
+          <ProductFeed products={filteredData} query={keyword} />
         </section>
       </main>
       <Footer />
