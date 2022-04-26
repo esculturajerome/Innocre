@@ -15,7 +15,7 @@ function Card({ category, subText, url, imageLink }) {
           <p className="text-sm">{category}</p>
           <h2 className="text-lg leading-5">{subText}</h2>
         </div>
-        <button className=" w-[100px]  mb-6 p-2 bg-white text-[#222222] rounded-lg hover-motion">
+        <button className=" w-[100px]  mb-6 p-2 bg-white text-mainText rounded-lg hover-motion">
           Show All
         </button>
       </div>

@@ -1,10 +1,10 @@
 import Image from "next/image";
 
-function Banner() {
+function Banner({ imageLink }) {
   return (
-    <div className="relative h-[200px] sm:h-[300px] lg:h-[350px] xl:h-[400px] 2xl:h-[450px]">
+    <div className="relative h-[300px] sm:h-[400px] md:h-[450px] lg:h-[380px] xl:h-[600] 2xl:h-[700px]">
       <Image
-        src="/images/full-banner-2.jpg"
+        src={`/images/${imageLink}`}
         objectFit="cover"
         layout="fill"
         objectPosition="center"

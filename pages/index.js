@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
@@ -11,6 +12,26 @@ import CardsRow from "../components/CardsRow";
 import { server } from "../config";
 
 export default function Home({ products }) {
+  const [data, setData] = useState([]);
+  const [filteredData, setFilteredData] = useState([]);
+
+  useEffect(() => {
+    setData(products);
+    setFilteredData(products);
+  }, []);
+
+  const handleCategory = (category) => {
+    console.log(category);
+    if (category !== "") {
+      const filteredByCategory = data.filter(
+        (item) => item.category.toLowerCase() === category.toLowerCase()
+      );
+      setFilteredData(filteredByCategory);
+    } else {
+      setFilteredData(data);
+    }
+  };
+
   return (
     <div className="font-Karla">
       <Head>
@@ -20,13 +41,10 @@ export default function Home({ products }) {
       </Head>
       <Header />
       <main>
-        <Banner />
-        <section className="w-[90%] mx-auto mt-2">
-          <Categories />
-        </section>
-
+        <Banner imageLink={"full-banner-2.jpg"} />
+        <Categories handleClick={handleCategory} />
         <section className="my-6 md:my-2">
-          <ProductFeed products={products} />
+          <ProductFeed products={filteredData} query={""} />
         </section>
         {/* <FullRow /> */}
       </main>

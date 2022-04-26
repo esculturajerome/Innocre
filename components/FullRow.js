@@ -8,7 +8,7 @@ function FullRow() {
           Shop Airbnb <br />
           gift cards
         </h2>
-        <button className="bg-[#222222] text-white hover:bg-black py-4 px-6 rounded-lg mt-6">
+        <button className="bg-mainText text-white hover:bg-black py-4 px-6 rounded-lg mt-6">
           Learn More
         </button>
       </div>

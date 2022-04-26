@@ -32,7 +32,7 @@ function CardsRow() {
     },
   ];
   return (
-    <div className="">
+    <div>
       <h2 className="text-xl md:text-4xl mb-3 font-Walsheim">New this week</h2>
       <div className="overflow-y-hidden overflow-x-scroll scroll-hidden text-white">
         <div className="inline-flex space-x-4">

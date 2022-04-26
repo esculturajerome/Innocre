@@ -14,7 +14,7 @@ function cart() {
       </Head>
       <Header />
       <main>
-        <Banner />
+        <Banner imageLink={"full-banner.jpg"} />
         <section className="w-[90%] mx-auto my-12">
           <CardsRow />
         </section>
