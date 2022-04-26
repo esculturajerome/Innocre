@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ProductFeed from "../../components/ProductFeed";
 
-export default function index({ products }) {
+export default function Search({ products }) {
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
   const [filteredData, setFilteredData] = useState([]);
