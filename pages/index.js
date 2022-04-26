@@ -18,7 +18,7 @@ export default function Home({ products }) {
   useEffect(() => {
     setData(products);
     setFilteredData(products);
-  }, []);
+  }, [products]);
 
   const handleCategory = (category) => {
     console.log(category);

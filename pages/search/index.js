@@ -10,7 +10,6 @@ import ProductFeed from "../../components/ProductFeed";
 
 export default function index({ products }) {
   const router = useRouter();
-  const [data, setData] = useState("");
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
 

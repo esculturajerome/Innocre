@@ -1,5 +1,3 @@
-import React from "react";
-import CardsRow from "./CardsRow";
 import Highlight from "./Highlight";
 import Product from "./Product";
 
@@ -77,7 +75,7 @@ function ProductFeed({ products, query }) {
         <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3  w-[90%] mx-auto">
           <div className="col-span-full">
             <h2 className="w-full md:my-2 text-xl font-bold">
-              Results for "{query}"{" "}
+              Results for {query}{" "}
               <span className="text-gray-400">({products.length})</span>
             </h2>
           </div>
