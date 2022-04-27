@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         mainText: "#222222",
         mainColor: "#ff385c",
+        secondaryColor: "#fde0e0",
       },
       fontFamily: {
         Nunito: ["Nunito Sans", "sans-serif"],

@@ -13,10 +13,6 @@ function Header() {
   const router = useRouter();
   const focusDiv = useRef();
 
-  useEffect(() => {
-    if (focusDiv.current) focusDiv.current.focus();
-  }, []);
-
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       if (keyword !== "") {
@@ -26,7 +22,6 @@ function Header() {
   };
 
   const handleSearch = (e) => {
-    if (focusDiv.current) focusDiv.current.focus();
     if (keyword !== "") {
       handleRedirect(e, `/search/?keyword=${keyword}`);
     }
@@ -48,7 +43,7 @@ function Header() {
           className="text-xl font-bold text-mainColor font-Nunito  cursor-pointer "
           onClick={(e) => handleRedirect(e, "/")}
         >
-          Innocre Store
+          Innocre
         </h1>
       </div>
 

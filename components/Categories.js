@@ -8,7 +8,7 @@ import {
 } from "@heroicons/react/solid";
 import SmallCard from "./SmallCard";
 
-function Categories({ handleClick }) {
+function Categories({ handleClick, onScroll, myRef }) {
   const [onClear, setOnClear] = useState(false);
   const categories = [
     {
@@ -36,6 +36,7 @@ function Categories({ handleClick }) {
   const handleOnClick = (value) => {
     handleClick(value);
     setOnClear(true);
+    onScroll();
   };
 
   const handleOnClear = () => {
@@ -44,7 +45,7 @@ function Categories({ handleClick }) {
   };
 
   return (
-    <section className="w-[90%] mx-auto mt-6">
+    <section className="w-[90%] my-4 mx-auto scroll-smooth" ref={myRef}>
       <div className="overflow-y-hidden overflow-x-scroll scroll-hidden">
         <div className="inline-flex space-x-2 md:space-x-4 ml-1">
           {onClear && (

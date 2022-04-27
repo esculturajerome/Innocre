@@ -7,7 +7,7 @@ import { HeartIcon, StarIcon } from "@heroicons/react/solid";
 function Product({ title, price, description, category, image, rating }) {
   // const [isSale] = useState(Math.random() < 0.5);
   return (
-    <div className="relative flex flex-col z-30 py-4 px-6 justify-around my-2 h-[350px] md:h-[400px] border rounded-xl bg-white w-[230px]">
+    <div className="relative flex flex-col z-30 py-4 px-3 justify-around h-[280px] md:h-[300px]  rounded-sm bg-white  sm:max-w-[200px]">
       <button className="absolute top-2 right-2 z-10 cursor-pointer">
         <HeartIcon className="h-6 fill-transparent stroke-black hover:fill-mainColor focus:fill-black text-mainText" />
       </button>
@@ -19,18 +19,20 @@ function Product({ title, price, description, category, image, rating }) {
           ({rating.count})
         </span>
       </p>
-      <div className="my-1">
-        <h2 className="line-clamp-2 cursor-pointer hover:underline focus:underline">
+      <div className="my-2">
+        <h2 className="line-clamp-2 text-sm hover:underline focus:underline">
           {title}
         </h2>
-        <p className="text-sm my-2 line-clamp-2">{description}</p>
-        <Currency quantity={price * 51.28} currency="PHP" />
+        {/* <p className="text-sm my-2 line-clamp-2">{description}</p> */}
+
         {/* <div className="flex items-center space-x-2 -mt-5">
         {isSale && <p>Sale!</p>}
       </div> */}
       </div>
-
-      <button className="text-left simple-btn ">Add to cart</button>
+      <button className="flex bg-secondaryColor text-xs justify-around p-2 rounded-md">
+        <div className="uppercase">Add to bag</div>
+        <Currency quantity={price * 51.28} currency="PHP" />
+      </button>
     </div>
   );
 }

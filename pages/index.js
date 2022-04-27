@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Header from "../components/Header";
@@ -10,8 +10,10 @@ import Footer from "../components/Footer";
 import CardsRow from "../components/CardsRow";
 
 import { server } from "../config";
+import RowBanners from "../components/RowBanners";
 
 export default function Home({ products }) {
+  const myRef = useRef(null);
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
@@ -19,6 +21,9 @@ export default function Home({ products }) {
     setData(products);
     setFilteredData(products);
   }, [products]);
+
+  const executeScroll = () =>
+    myRef.current.scrollIntoView({ behavior: "smooth" });
 
   const handleCategory = (category) => {
     console.log(category);
@@ -41,13 +46,19 @@ export default function Home({ products }) {
       </Head>
       <Header />
       <main>
-        <Banner imageLink={"full-banner-2.jpg"} />
-        <Categories handleClick={handleCategory} />
-        <section className="my-6 md:my-2">
+        <Banner imageLink={"sale-banner.jpg"} />
+        <Categories
+          handleClick={handleCategory}
+          onScroll={executeScroll}
+          myRef={myRef}
+        />
+
+        <section className=" mx-auto ">
           <ProductFeed products={filteredData} query={""} />
         </section>
         {/* <FullRow /> */}
       </main>
+      <RowBanners />
       <Footer />
     </div>
   );

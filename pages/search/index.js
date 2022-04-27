@@ -35,7 +35,7 @@ export default function Search({ products }) {
       </Head>
       <Header />
       <main>
-        <Banner imageLink={"banner-2.webp"} />
+        <Banner imageLink={"full-banner-4.webp"} />
         <section className="my-6 md:my-2">
           <ProductFeed products={filteredData} query={keyword} />
         </section>
